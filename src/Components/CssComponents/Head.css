@@ -1,0 +1,96 @@
+/*Надпись*/
+@import url(http://fonts.googleapis.com/css?family=Arvo:700);
+@import url(http://fonts.googleapis.com/css?family=Seaweed+Script);
+
+.plate {
+    width: 510px;
+    margin: auto;
+}
+
+.shadow {
+    color: white;
+    font-family: Arvo;
+    font-weight: bold;
+    text-shadow:
+            -3px -3px 0 #222,
+            3px -3px 0 #222,
+            -3px 3px 0 #222,
+            3px 3px 0 #222,
+            4px 4px 0 #cccccc,
+            5px 5px 0 #cccccc,
+            6px 6px 0 #cccccc,
+            7px 7px 0 #cccccc;
+    line-height: 0.8em;
+    letter-spacing: 0.1em;
+    transform: scaleY(0.7);
+    -webkit-transform: scaleY(0.7);
+    -moz-transform: scaleY(0.7);
+    margin:0;
+    text-align: center;
+}
+.script {
+    font-family: "Seaweed Script";
+    color:  white;
+    text-align: center;
+    font-size: 30px;
+    position: relative;
+    margin:0;
+}
+.script span {
+    background: #1E2630 url("fancy-pants.jpg");
+    padding: 0 0.3em;
+}
+.script:before {
+    content:"";
+    display: block;
+    position: absolute;
+    z-index:-1;
+    top: 50%;
+    width: 100%;
+    border-bottom: 3px solid #cccccc;
+}
+.text1 {
+    font-size: 50px;
+}
+
+/*=========================================*/
+/*Кнопки*/
+.container {
+    display: flex;
+    position: relative; /* Абсолютное позиционирование */
+    width: 70%; /* Ширина блока */
+    margin: auto; /* Отступ от блока */
+    top: 0; /* Положение блока от верхнего края */
+    bottom: 0; /* Положение блока от нижнего края */
+    left: 0; /* Положение блока от левого края */
+    right: 0; /* Положение блока от правого края */
+}
+
+a.button8 {
+    display: block;
+    position: center;
+    color: white;
+    font-weight: 400;
+    text-decoration: none;
+    user-select: none;
+    padding: .11em 2em;
+    outline: none;
+    border: 2px solid;
+    border-radius: 4px;
+    transition: 0.3s;
+    margin: 5% auto;
+    font-family: "Times New Roman",cursive;
+    font-size: 30px;
+}
+a.button8:hover { background: rgba(255,255,255,.2); }
+a.button8:active { background: white; }
+
+
+
+
+
+
+
+
+
+

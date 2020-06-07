@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="6095f796-74ab-47a3-8f2d-3a0e8b5eb939" name="Default" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="react-intro" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript File" />
+        <option value="JavaScript File" />
+        <option value="CSS File" />
+      </list>
+    </option>
+  </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
+  <component name="ProjectId" id="1ZrCJs4OEScyVNsKRhGIkiJgkb3" />
+  <component name="PropertiesComponent">
+    <property name="HbShouldOpenHtmlAsHb" value="" />
+    <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="jsx.switch.disabled" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2019.2.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Node.js.index.js">
+    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
+      <method />
+    </configuration>
+    <configuration name="App.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/src/App.js" working-dir="$PROJECT_DIR$/src">
+      <method v="2" />
+    </configuration>
+    <configuration name="Condition.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/src/ComponentsApp/Condition.js" working-dir="$PROJECT_DIR$/src/ComponentsApp">
+      <method v="2" />
+    </configuration>
+    <configuration name="index.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/src/index.js" working-dir="$PROJECT_DIR$/src">
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="mocha-javascript-test-runner">
+      <node-interpreter />
+      <node-options />
+      <working-directory>$PROJECT_DIR$</working-directory>
+      <pass-parent-env>true</pass-parent-env>
+      <ui>bdd</ui>
+      <extra-mocha-options />
+      <test-kind>DIRECTORY</test-kind>
+      <test-directory />
+      <recursive>false</recursive>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Node.js.index.js" />
+        <item itemvalue="Node.js.Condition.js" />
+        <item itemvalue="Node.js.App.js" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6095f796-74ab-47a3-8f2d-3a0e8b5eb939" name="Default" comment="" />
+      <created>1585584699902</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1585584699902</updated>
+      <workItem from="1585587775333" duration="942000" />
+      <workItem from="1585691845008" duration="1398000" />
+      <workItem from="1585743018814" duration="4131000" />
+      <workItem from="1585853333754" duration="3079000" />
+      <workItem from="1585948286189" duration="4167000" />
+      <workItem from="1586118143541" duration="6568000" />
+      <workItem from="1586206503160" duration="1517000" />
+      <workItem from="1586373624157" duration="2434000" />
+      <workItem from="1586564061560" duration="784000" />
+      <workItem from="1586875110099" duration="8707000" />
+      <workItem from="1587374402377" duration="1537000" />
+      <workItem from="1587816364067" duration="3650000" />
+      <workItem from="1588067397227" duration="4577000" />
+      <workItem from="1588448049395" duration="1742000" />
+      <workItem from="1588615499327" duration="2688000" />
+      <workItem from="1588837263802" duration="1485000" />
+      <workItem from="1588883593500" duration="2853000" />
+      <workItem from="1589150044909" duration="4171000" />
+      <workItem from="1589293495342" duration="3443000" />
+      <workItem from="1589411691660" duration="2489000" />
+      <workItem from="1589485802556" duration="1722000" />
+      <workItem from="1589578831612" duration="2519000" />
+      <workItem from="1589662935175" duration="1726000" />
+      <workItem from="1589972864644" duration="8725000" />
+      <workItem from="1589998949957" duration="5117000" />
+      <workItem from="1590167024574" duration="4960000" />
+      <workItem from="1590185823692" duration="600000" />
+      <workItem from="1590277780597" duration="3509000" />
+      <workItem from="1590427461789" duration="4831000" />
+      <workItem from="1590447577976" duration="1317000" />
+      <workItem from="1590530262080" duration="8005000" />
+      <workItem from="1590617711039" duration="1083000" />
+      <workItem from="1590618810539" duration="509000" />
+      <workItem from="1590619335059" duration="1124000" />
+      <workItem from="1590620476832" duration="5185000" />
+      <workItem from="1590701241708" duration="16051000" />
+      <workItem from="1590754118292" duration="19264000" />
+      <workItem from="1590803543005" duration="606000" />
+      <workItem from="1590804323048" duration="196000" />
+      <workItem from="1590830532815" duration="1260000" />
+      <workItem from="1590833577309" duration="6763000" />
+      <workItem from="1590841000661" duration="1266000" />
+      <workItem from="1590922304216" duration="2288000" />
+      <workItem from="1590925023376" duration="3591000" />
+      <workItem from="1590928645813" duration="160000" />
+      <workItem from="1590928821353" duration="5071000" />
+      <workItem from="1590936683950" duration="6362000" />
+      <workItem from="1591016850828" duration="9882000" />
+      <workItem from="1591036700688" duration="613000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/index.js</url>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

@@ -1,0 +1,14 @@
+@import url(http://fonts.googleapis.com/css?family=Seaweed+Script);
+
+footer{
+position: relative;
+}
+
+footer p {
+    font-family: "Seaweed Script";
+    color: #cccccc;
+    text-align: center;
+    font-size: 30px;
+    position: relative;
+    margin:0;
+}
