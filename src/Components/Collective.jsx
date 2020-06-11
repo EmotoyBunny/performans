@@ -61,31 +61,31 @@ class Collective extends Component {
     render() {
         return (
             <div className="block-center">
-                    <div className="d10">
-                      <h3>Добавить или удалить участника состава</h3>
+                <div className="d10">
+                    <h3>Добавить или удалить участника состава</h3>
+                </div>
+                <br/>
+                <form onSubmit={this.addItem}>
+                    <div>
+                        <input name="user" className="form_search_input" placeholder="Имя" value={this.state.user} onChange={this.handleChange}/>
+                        <button type="submit" className="form_search_button">Добавить</button>
                     </div>
-                <br/>
-                    <form onSubmit={this.addItem}>
-                        <div>
-                            <input name="user" className="form_search_input" placeholder="Имя" value={this.state.user} onChange={this.handleChange}/>
-                            <button type="submit" className="form_search_button">Добавить</button>
-                        </div>
-                    </form>
+                </form>
                 <br />
-                    <form onSubmit={this.delete}>
-                        <div>
-                            <input name="delete" className="form_search_input" placeholder="Имя" value={this.state.delete} onChange={this.handleChange}/>
-                            <button type="submit" className="form_search_button">Удалить</button>
-                          </div>
-                      </form>
+                <form onSubmit={this.delete}>
+                    <div>
+                        <input name="delete" className="form_search_input" placeholder="Имя" value={this.state.delete} onChange={this.handleChange}/>
+                        <button type="submit" className="form_search_button">Удалить</button>
+                    </div>
+                </form>
                 <br/>
-                      <div className="d10">
-                        <h3>Наш состав</h3>
-                      </div>
+                <div className="d10">
+                    <h3>Наш состав</h3>
+                </div>
                 <br/>
-                      <div className="pills">
-                        {this.outputItem()}
-                      </div>
+                <div className="pills">
+                    {this.outputItem()}
+                </div>
             </div>
         )
     }

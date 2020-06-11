@@ -2,25 +2,24 @@ import React,{Component} from "react";
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import {Nav} from "react-bootstrap"
 
-// Компоненты css
 import "./CssComponents/Head.css"
 
-// Компоненты js
-import Contacts from "./Contacts";
-import MainContent from "./MainContent";
-import Dance from "./Dance";
-import Collective from "./Collective";
+// Компоненты jsx
+import Contacts from "./Contacts.jsx";
+import MainContent from "./MainContent.jsx";
+import Dance from "./Dance.jsx";
+import Collective from "./Collective.jsx";
 
 
 class Head extends Component{
     render(){
         return(
             <div>
-            <header className="plate">
-                <p className="script"><span>Show</span></p>
-                <p className="shadow text1">PERFORMANCE</p>
-                <p className="script"><span>Ballet</span></p>
-            </header>
+                <header className="plate">
+                    <p className="script"><span>Show</span></p>
+                    <p className="shadow text1">PERFORMANCE</p>
+                    <p className="script"><span>Ballet</span></p>
+                </header>
                 <div className="container">
                     <Nav.Link href="/" className="button8">Главная</Nav.Link>
                     <Nav.Link href="/сontacts" className="button8">Контакты</Nav.Link>

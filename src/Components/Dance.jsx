@@ -22,58 +22,58 @@ class Dance extends Component {
     render() {
         return(
             <div>
-            <div className="container">
-            <div className="dbl-border">
-                <div className="image-wrapper">
-                    <figure className="sign">
-                        <a href="https://vk.com/album-99486132_269660086"><img alt="" src={Frey}/></a>
-                    <figcaption> "Фрейлины"</figcaption>
-                    </figure>
-                </div>
-            </div>
-                <div className="dbl-border">
-                    <div className="image-wrapper">
-                        <figure className="sign">
-                            <a href="https://vk.com/album-99486132_269659996"> <img alt="" src={Punk}/></a>
-                            <figcaption>"Стимпанк"</figcaption>
-                        </figure>
-                    </div>
-                </div>
-                <div className="dbl-border">
-                    <div className="image-wrapper">
-                        <figure className="sign">
-                            <a href="https://vk.com/album-99486132_249920445"><img alt="" src={Braz}/></a>
-                            <figcaption>"Бразилия"</figcaption>
-                        </figure>
-                    </div>
-                </div>
-            </div>
                 <div className="container">
-                <div className="dbl-border">
-                    <div className="image-wrapper">
-                        <figure className="sign">
-                            <a href="https://vk.com/album-99486132_258102663"><img alt="" src={Lez}/></a>
-                            <figcaption>"Лезгинка"</figcaption>
-                        </figure>
+                    <div className="dbl-border">
+                        <div className="image-wrapper">
+                            <figure className="sign">
+                                <a href="https://vk.com/album-99486132_269660086"><img alt="" src={Frey}/></a>
+                                <figcaption> "Фрейлины"</figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                    <div className="dbl-border">
+                        <div className="image-wrapper">
+                            <figure className="sign">
+                                <a href="https://vk.com/album-99486132_269659996"> <img alt="" src={Punk}/></a>
+                                <figcaption>"Стимпанк"</figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                    <div className="dbl-border">
+                        <div className="image-wrapper">
+                            <figure className="sign">
+                                <a href="https://vk.com/album-99486132_249920445"><img alt="" src={Braz}/></a>
+                                <figcaption>"Бразилия"</figcaption>
+                            </figure>
+                        </div>
                     </div>
                 </div>
-                <div className="dbl-border">
-                    <div className="image-wrapper">
-                        <figure className="sign">
-                            <a href="https://vk.com/album-99486132_249920481"><img alt="" src={Gaga}/></a>
-                            <figcaption>"Леди Гага"</figcaption>
-                        </figure>
+                <div className="container">
+                    <div className="dbl-border">
+                        <div className="image-wrapper">
+                            <figure className="sign">
+                                <a href="https://vk.com/album-99486132_258102663"><img alt="" src={Lez}/></a>
+                                <figcaption>"Лезгинка"</figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                    <div className="dbl-border">
+                        <div className="image-wrapper">
+                            <figure className="sign">
+                                <a href="https://vk.com/album-99486132_249920481"><img alt="" src={Gaga}/></a>
+                                <figcaption>"Леди Гага"</figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                    <div className="dbl-border">
+                        <div className="image-wrapper">
+                            <figure className="sign">
+                                <a href="https://vk.com/album-99486132_250785571"><img alt="" src={Burlesk}/></a>
+                                <figcaption>"Бурлеск"</figcaption>
+                            </figure>
+                        </div>
                     </div>
                 </div>
-                <div className="dbl-border">
-                    <div className="image-wrapper">
-                        <figure className="sign">
-                            <a href="https://vk.com/album-99486132_250785571"><img alt="" src={Burlesk}/></a>
-                            <figcaption>"Бурлеск"</figcaption>
-                        </figure>
-                    </div>
-                </div>
-            </div>
                 <div className="container">
                     <div className="dbl-border">
                         <div className="image-wrapper">
