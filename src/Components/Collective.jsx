@@ -1,8 +1,22 @@
 import React, {Component} from "react";
+import { makeStyles } from '@material-ui/core/styles';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemText from '@material-ui/core/ListItemText';
+import Button from '@material-ui/core/Button';
+import TextField from '@material-ui/core/TextField';
+import IconButton from '@material-ui/core/IconButton';
+import DeleteIcon from '@material-ui/icons/Delete';
 
 // Компоненты css
 import "./CssComponents/Сollective.css";
 
+const useStyles = makeStyles((theme) => ({
+    root: {
+        '& > *': {
+            margin: theme.spacing(1),
+        },
+    },
+}));
 
 class Collective extends Component {
     constructor() {
@@ -14,31 +28,17 @@ class Collective extends Component {
         };
     }
 
-    // запись из input
+    /*запись из поля ввода*/
     handleChange = (event) => {
         const {name, value} = event.target;
         this.setState({[name]: value});
     };
 
-    // удаление элемента по имени
-    delete = (event) => {
-        event.preventDefault();
-        const array=this.state.array;
-        if(this.state.delete==="" || this.state.array.indexOf(this.state.delete) === -1){
-            alert("Введите имя, которое есть в списке!");
-            return;
-        }
-        let deleteWord = array.indexOf(this.state.delete);
-        array.splice(deleteWord,1);
-        this.setState({array: array});
-        localStorage.clear();
-        localStorage.setItem('arr', JSON.stringify(array));
-    };
-
-    // добавление элемента
+    /*добавление элемента*/
     addItem = (event) => {
         event.preventDefault();
-        if(this.state.user==="" || this.state.array.indexOf(this.state.user) !== -1){
+        if(this.state.user==="" || this.state.array.indexOf(this.state.user) !== -1)
+        {
             alert("Введите подобающее имя!");
             return;
         }
@@ -48,13 +48,27 @@ class Collective extends Component {
         localStorage.setItem('arr', JSON.stringify(this.state.array));
     };
 
-    // вывод списка
+    /*удаление элемента v-2*/
+    delete = (del) => {
+        const array=this.state.array;
+        array.splice(del,1);
+        this.setState({array: array});
+        localStorage.clear();
+        localStorage.setItem('arr', JSON.stringify(array));
+    };
+
+    /*вывод списка*/
     outputItem = () =>{
         const array=this.state.array;
         const listItems = array.map((items, index) =>
-            <li key={index}>{items}</li>
+            <ListItem key={index} button  className="list">
+                <ListItemText  id={index}  primary={items}/>
+                <IconButton aria-label="delete" color="inherit" >
+                    <DeleteIcon onClick={()=> this.delete(index)} />
+                </IconButton>
+            </ListItem>
         );
-        return (<ul>{listItems}</ul>);
+        return (<list>{listItems}</list>);
     };
 
 
@@ -66,16 +80,13 @@ class Collective extends Component {
                 </div>
                 <br/>
                 <form onSubmit={this.addItem}>
-                    <div>
-                        <input name="user" className="form_search_input" placeholder="Имя" value={this.state.user} onChange={this.handleChange}/>
-                        <button type="submit" className="form_search_button">Добавить</button>
-                    </div>
-                </form>
-                <br />
-                <form onSubmit={this.delete}>
-                    <div>
-                        <input name="delete" className="form_search_input" placeholder="Имя" value={this.state.delete} onChange={this.handleChange}/>
-                        <button type="submit" className="form_search_button">Удалить</button>
+                    <div className="focus">
+                        <form className={useStyles.root} noValidate autoComplete="off">
+                            <TextField name="user" color='secondary' id="outlined-basic" label='Имя' variant="filled" value={this.state.user} onChange={this.handleChange}/>
+                            <Button variant="contained" color="default" size="large" type="submit">
+                              Добавить
+                            </Button>
+                        </form>
                     </div>
                 </form>
                 <br/>
@@ -83,8 +94,8 @@ class Collective extends Component {
                     <h3>Наш состав</h3>
                 </div>
                 <br/>
-                <div className="pills">
-                    {this.outputItem()}
+                <div>
+                   {this.outputItem()}
                 </div>
             </div>
         )
