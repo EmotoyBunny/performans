@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import { makeStyles } from '@material-ui/core/styles';
+import {makeStyles} from '@material-ui/core/styles';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import Button from '@material-ui/core/Button';
@@ -28,49 +28,59 @@ class Collective extends Component {
         };
     }
 
-    /*запись из поля ввода*/
+    /**
+     * запись из поля ввода
+     * @param event
+     */
     handleChange = (event) => {
         const {name, value} = event.target;
         this.setState({[name]: value});
     };
 
-    /*добавление элемента*/
+    /**
+     * добавление элемента
+     * @param event
+     */
     addItem = (event) => {
         event.preventDefault();
-        if(this.state.user==="" || this.state.array.indexOf(this.state.user) !== -1)
-        {
+        if (this.state.user === "" || this.state.array.indexOf(this.state.user) !== -1) {
             alert("Введите подобающее имя!");
             return;
         }
-        const list=this.state.array;
+        const list = this.state.array;
         list.push(this.state.user);
         this.setState({array: list});
         localStorage.setItem('arr', JSON.stringify(this.state.array));
     };
 
-    /*удаление элемента v-2*/
+    /**
+     * удаление элемента
+     * @param del - индекс элемента
+     */
     delete = (del) => {
-        const array=this.state.array;
-        array.splice(del,1);
+        const array = this.state.array;
+        array.splice(del, 1);
         this.setState({array: array});
         localStorage.clear();
         localStorage.setItem('arr', JSON.stringify(array));
     };
 
-    /*вывод списка*/
-    outputItem = () =>{
-        const array=this.state.array;
+    /**
+     * вывод списка
+     * @returns {*} - список
+     */
+    outputItem = () => {
+        const array = this.state.array;
         const listItems = array.map((items, index) =>
-            <ListItem key={index} button  className="list">
-                <ListItemText  id={index}  primary={items}/>
-                <IconButton aria-label="delete" color="inherit" >
-                    <DeleteIcon onClick={()=> this.delete(index)} />
+            <ListItem key={index} button className="list">
+                <ListItemText id={index} primary={items}/>
+                <IconButton aria-label="delete" color="inherit">
+                    <DeleteIcon onClick={() => this.delete(index)}/>
                 </IconButton>
             </ListItem>
         );
         return (<list>{listItems}</list>);
     };
-
 
     render() {
         return (
@@ -82,9 +92,10 @@ class Collective extends Component {
                 <form onSubmit={this.addItem}>
                     <div className="focus">
                         <form className={useStyles.root} noValidate autoComplete="off">
-                            <TextField name="user" color='secondary' id="outlined-basic" label='Имя' variant="filled" value={this.state.user} onChange={this.handleChange}/>
+                            <TextField name="user" color='secondary' id="outlined-basic" label='Имя' variant="filled"
+                                       value={this.state.user} onChange={this.handleChange}/>
                             <Button variant="contained" color="default" size="large" type="submit">
-                              Добавить
+                                Добавить
                             </Button>
                         </form>
                     </div>
@@ -95,7 +106,7 @@ class Collective extends Component {
                 </div>
                 <br/>
                 <div>
-                   {this.outputItem()}
+                    {this.outputItem()}
                 </div>
             </div>
         )
