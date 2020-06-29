@@ -1,6 +1,6 @@
 import React, {Component} from "react";
-import {makeStyles} from '@material-ui/core/styles';
 import ListItem from '@material-ui/core/ListItem';
+import List from '@material-ui/core/List';
 import ListItemText from '@material-ui/core/ListItemText';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
@@ -10,22 +10,15 @@ import DeleteIcon from '@material-ui/icons/Delete';
 // Компоненты css
 import "./CssComponents/Сollective.css";
 
-const useStyles = makeStyles((theme) => ({
-    root: {
-        '& > *': {
-            margin: theme.spacing(1),
-        },
-    },
-}));
 
 class Collective extends Component {
     constructor() {
         super();
         this.state = {
             user: "",
-            delete: "",
-            array: JSON.parse(localStorage.getItem('arr')) || [],
+            array: [],
         };
+        this.url = 'http://localhost:7000/api/dancers';
     }
 
     /**
@@ -39,18 +32,19 @@ class Collective extends Component {
 
     /**
      * добавление элемента
-     * @param event
+     *
      */
-    addItem = (event) => {
-        event.preventDefault();
-        if (this.state.user === "" || this.state.array.indexOf(this.state.user) !== -1) {
-            alert("Введите подобающее имя!");
-            return;
-        }
-        const list = this.state.array;
-        list.push(this.state.user);
-        this.setState({array: list});
-        localStorage.setItem('arr', JSON.stringify(this.state.array));
+    addItem = () => {
+        let id = this.state.user;
+        let dancer = {dancer: {id: id, name: id}};
+        fetch(this.url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json;charset=utf-8'
+            },
+            body: JSON.stringify(dancer)
+        })
+            .then(response => response.json())
     };
 
     /**
@@ -58,28 +52,35 @@ class Collective extends Component {
      * @param del - индекс элемента
      */
     delete = (del) => {
-        const array = this.state.array;
-        array.splice(del, 1);
-        this.setState({array: array});
-        localStorage.clear();
-        localStorage.setItem('arr', JSON.stringify(array));
+        fetch('http://localhost:7000/api/dancers?id=' + del, {
+            method: 'DELETE'
+        })
+            .then(response => response.json())
     };
+
 
     /**
      * вывод списка
      * @returns {*} - список
      */
     outputItem = () => {
+        fetch(this.url)
+            .then(response => {
+                return response.json();
+            })
+            .then(dancer => {
+                this.setState({array: dancer.data})
+            });
         const array = this.state.array;
         const listItems = array.map((items, index) =>
             <ListItem key={index} button className="list">
-                <ListItemText id={index} primary={items}/>
-                <IconButton aria-label="delete" color="inherit">
-                    <DeleteIcon onClick={() => this.delete(index)}/>
+                <ListItemText id={index} primary={items.name}/>
+                <IconButton aria-label="delete" color="inherit" onClick={() => this.delete(items.name)}>
+                    <DeleteIcon/>
                 </IconButton>
             </ListItem>
         );
-        return (<list>{listItems}</list>);
+        return (<List>{listItems}</List>);
     };
 
     render() {
@@ -89,17 +90,12 @@ class Collective extends Component {
                     <h3>Добавить или удалить участника состава</h3>
                 </div>
                 <br/>
-                <form onSubmit={this.addItem}>
-                    <div className="focus">
-                        <form className={useStyles.root} noValidate autoComplete="off">
-                            <TextField name="user" color='secondary' id="outlined-basic" label='Имя' variant="filled"
-                                       value={this.state.user} onChange={this.handleChange}/>
-                            <Button variant="contained" color="default" size="large" type="submit">
-                                Добавить
-                            </Button>
-                        </form>
-                    </div>
-                </form>
+                <div className="focus">
+                    <TextField name="user" color='secondary' id="outlined-basic" label='Имя' variant="filled" value={this.state.user} onChange={this.handleChange}/>
+                    <Button variant="contained" color="default" size="large" onClick={this.addItem}>
+                        Добавить
+                    </Button>
+                </div>
                 <br/>
                 <div className="d10">
                     <h3>Наш состав</h3>
