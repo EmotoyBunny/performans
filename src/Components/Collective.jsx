@@ -45,6 +45,7 @@ class Collective extends Component {
             body: JSON.stringify(dancer)
         })
             .then(response => response.json())
+            .then(() => this.updateList());
     };
 
     /**
@@ -56,7 +57,22 @@ class Collective extends Component {
             method: 'DELETE'
         })
             .then(response => response.json())
+             .then(() => this.updateList());
     };
+
+ updateList = () => {
+     fetch(this.url)
+         .then(response => {
+             return response.json();
+         })
+         .then(dancer => {
+             this.setState({array: dancer.data})
+         });
+ };
+
+ componentDidMount() {
+     this.updateList();
+ }
 
 
     /**
@@ -64,13 +80,6 @@ class Collective extends Component {
      * @returns {*} - список
      */
     outputItem = () => {
-        fetch(this.url)
-            .then(response => {
-                return response.json();
-            })
-            .then(dancer => {
-                this.setState({array: dancer.data})
-            });
         const array = this.state.array;
         const listItems = array.map((items, index) =>
             <ListItem key={index} button className="list">
