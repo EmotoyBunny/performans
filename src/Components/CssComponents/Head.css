@@ -2,6 +2,7 @@
 @import url(http://fonts.googleapis.com/css?family=Arvo:700);
 @import url(http://fonts.googleapis.com/css?family=Seaweed+Script);
 
+
 .plate {
     width: 510px;
     margin: auto;
@@ -58,12 +59,7 @@
 .container {
     display: flex;
     position: relative; /* Абсолютное позиционирование */
-    width: 70%; /* Ширина блока */
-    margin: auto; /* Отступ от блока */
-    top: 0; /* Положение блока от верхнего края */
-    bottom: 0; /* Положение блока от нижнего края */
-    left: 0; /* Положение блока от левого края */
-    right: 0; /* Положение блока от правого края */
+
 }
 
 a.button8 {
