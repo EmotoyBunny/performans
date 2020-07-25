@@ -5,6 +5,11 @@ body {
     margin-right: 20%;
 }
 
+a {
+    color: #FCF2E5; /* Цвет обычной ссылки */
+    text-decoration: none;
+    text-transform: uppercase;
+}
 
 
 

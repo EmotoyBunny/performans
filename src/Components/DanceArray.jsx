@@ -19,7 +19,7 @@ const DanceArray = [
         text: "Фрейлины",
         link: "https://vk.com/album-99486132_269660086",
         img: Frey,
-        width: 445,
+        width: 100,
         height: 350
     },
     {
@@ -27,7 +27,7 @@ const DanceArray = [
         text: "Стимпанк",
         link: "https://vk.com/album-99486132_269659996",
         img: Punk,
-        width: 445,
+        width: 100,
         height: 350
     },
     {
@@ -35,7 +35,7 @@ const DanceArray = [
         text: "Лезгинка",
         link: "https://vk.com/album-99486132_258102663",
         img: Lez,
-        width: 445,
+        width: 100,
         height: 350
     },
     {
@@ -43,7 +43,7 @@ const DanceArray = [
         text: "Бразилия",
         link: "https://vk.com/album-99486132_249920445",
         img: Braz,
-        width: 445,
+        width: 100,
         height: 350
     },
     {
@@ -51,7 +51,7 @@ const DanceArray = [
         text: "Леди Гага",
         link: "https://vk.com/album-99486132_249920481",
         img: Gaga,
-        width: 445,
+        width: 100,
         height: 350
     },
     {
@@ -59,7 +59,7 @@ const DanceArray = [
         text: "Бурлеск",
         link: "https://vk.com/album-99486132_250785571",
         img: Burlesk,
-        width: 445,
+        width: 100,
         height: 350
     },
     {
@@ -67,7 +67,7 @@ const DanceArray = [
         text: "Трости",
         link: "https://vk.com/album-99486132_247294931",
         img: Trost,
-        width: 445,
+        width: 100,
         height: 350
     },
     {
@@ -75,7 +75,7 @@ const DanceArray = [
         text: "Амазонки",
         link: "https://vk.com/album-99486132_247294714",
         img: Amaz,
-        width: 445,
+        width: 100,
         height: 350
     },
     {
@@ -83,7 +83,7 @@ const DanceArray = [
         text: "Море",
         link: "https://vk.com/album-99486132_247294858",
         img: Sea,
-        width: 445,
+        width: 100,
         height: 350
     },
     {
@@ -91,7 +91,7 @@ const DanceArray = [
         text: "Гаваи",
         link: "https://vk.com/album-99486132_247294760",
         img: Gavai,
-        width: 445,
+        width: 100,
         height: 350
     },
     {
@@ -99,7 +99,7 @@ const DanceArray = [
         text: "Веера",
         link: "https://vk.com/album-99486132_247294919",
         img: Veera,
-        width: 445,
+        width: 100,
         height: 350
     },
     {
@@ -107,15 +107,15 @@ const DanceArray = [
         text: "Русский",
         link: "https://vk.com/album-99486132_247294822",
         img: Russ,
-        width: 445,
-        height: 350
+        width: 100,
+       height: 350
     },
     {
         id: 13,
         text: "Цыганочка",
         link: "https://vk.com/album-99486132_247294783",
         img: Cigan,
-        width: 445,
+        width: 100,
         height: 350
     },
 ];

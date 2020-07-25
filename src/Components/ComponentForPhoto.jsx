@@ -10,7 +10,7 @@ import Link from '@material-ui/core/Link';
 export default function ComponentForPhoto(props) {
     const useStyles = makeStyles({
         root: {
-            maxWidth: props.item.width,
+            maxWidth: props.item.width+"%",
         },
         media: {
             height: props.item.height,

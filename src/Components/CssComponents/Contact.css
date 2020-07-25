@@ -1,52 +1,9 @@
 
-a {
-    color: #FCF2E5; /* Цвет обычной ссылки */
-    text-decoration: none;
-    padding: 30px;
-    text-transform: uppercase;
+.link{
+    color: black; /* Цвет обычной ссылки */
+    text-transform: none;
+    margin-right: 0;
+    margin-left: 0
 }
 
- a:visited {
-    text-decoration: none;
-    color: #FCF2E5; /* Цвет посещенной ссылки */
-}
-a:hover {
-    text-decoration: none;
-    color: #FCF2E5; /* Цвет ссылки при наведении на нее курсора мыши */
-}
 
-/*-------------------------------*/
-.holiday {
-    width:1050px;
-    overflow: hidden;
-    font-size: 30px;
-    text-transform: uppercase;
-}
-.holiday dt, .holiday dd {
-    height: 2.5em;
-    line-height: 2.5em;
-    padding: 0 0.825em 0 0.675em;
-    color: #4C565C;
-    box-sizing: border-box;
-}
-
-dt {
-    width:450px;
-    float: left;
-    clear: right;
-    background: #FCF2E5;
-    font-weight: bold;
-}
-
-dd {
-    width: 600px;
-    float: right;
-    margin-left: 0;
-    margin-bottom: .3125em;
-    border: 1px solid #FCF2E5 ;
-    border-left: none;
-}
-
-.holiday p{
-    color: #FCF2E5;
-}

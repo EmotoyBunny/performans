@@ -12,9 +12,10 @@ import "./CssComponents/Main.css"
 class MainContent extends Component {
     render() {
         return (
+
             <ComponentForPhoto
                 item={{
-                    width: 2000,
+                    width: 100,
                     height: 600,
                     img: logo,
                     text: "О нас",
@@ -24,6 +25,7 @@ class MainContent extends Component {
                         "а также оригинальные номера не оставят равнодушным даже самого притязательного зрителя!\n" +
                         "Мы будем рады сотрудничеству именно с Вами!"
                 }}/>
+
         );
     }
 }
