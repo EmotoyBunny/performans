@@ -17,6 +17,7 @@ class Collective extends Component {
         this.state = {
             user: "",
             array: [],
+            role: 0,
         };
         this.url = 'http://localhost:7000/api/dancers';
     }
@@ -57,22 +58,48 @@ class Collective extends Component {
             method: 'DELETE'
         })
             .then(response => response.json())
-             .then(() => this.updateList());
+            .then(() => this.updateList());
     };
 
- updateList = () => {
-     fetch(this.url)
-         .then(response => {
-             return response.json();
-         })
-         .then(dancer => {
-             this.setState({array: dancer.data})
-         });
- };
+    /**
+     * Обновление массива с танцорами
+     *
+     */
+    updateList = () => {
+        fetch(this.url)
+            .then(response => {
+                return response.json();
+            })
+            .then(dancer => {
+                this.setState({array: dancer.data})
+            })
+            .then(() => this.update());
+    };
 
- componentDidMount() {
-     this.updateList();
- }
+
+    update = () => {
+        if (localStorage.getItem("userId") !== null) {
+            let userId = Number(localStorage.getItem('userId'));
+            let login = {loginInfo: {userId: userId}};
+            fetch('http://127.0.0.1:7000/api/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json;charset=utf-8'
+                },
+                body: JSON.stringify(login)
+            })
+                .then(response => response.json())
+                .then(result => {
+                    this.setState({role: result.roleId});
+                });
+        } else {
+            this.setState({role: 0});
+        }
+    };
+
+    componentDidMount() {
+        this.updateList();
+    }
 
 
     /**
@@ -81,40 +108,57 @@ class Collective extends Component {
      */
     outputItem = () => {
         const array = this.state.array;
-        const listItems = array.map((items, index) =>
-            <ListItem key={index} button className="list">
-                <ListItemText id={index} primary={items.name}/>
-                <IconButton aria-label="delete" color="inherit" onClick={() => this.delete(items.name)}>
-                    <DeleteIcon/>
-                </IconButton>
-            </ListItem>
-        );
-        return (<List>{listItems}</List>);
+        if (this.state.role === 0) {
+            const listItems = array.map((items, index) =>
+                <ListItem key={index} button className="list">
+                    <ListItemText id={index} primary={items.name}/>
+                </ListItem>
+            );
+            return (<List>{listItems}</List>);
+        } else if (this.state.role === 1 || this.state.role === 2) {
+            const listItems = array.map((items, index) =>
+                <ListItem key={index} button className="list">
+                    <ListItemText id={index} primary={items.name}/>
+                    <IconButton aria-label="delete" color="inherit" onClick={() => this.delete(items.name)}>
+                        <DeleteIcon/>
+                    </IconButton>
+                </ListItem>
+            );
+            return (<List>{listItems}</List>);
+        }
     };
 
     render() {
+        if (this.state.role === 2) {
+            return (
+                <div className="block-center">
+                    <div className="d10">
+                        <h3>Добавить участника состава</h3>
+                    </div>
+                    <br/>
+                    <div className="focus">
+                        <TextField name="user" color='secondary' id="outlined-basic" label='Имя' variant="filled"
+                                   value={this.state.user} onChange={this.handleChange}/>
+                        <Button variant="contained" color="default" size="large" onClick={this.addItem}>
+                            Добавить
+                        </Button>
+                    </div>
+                    <br/>
+                    <div className="d10">
+                        <h3>Наш состав</h3>
+                    </div>
+                    <br/>
+                    <div>
+                        {this.outputItem()}
+                    </div>
+                </div>
+            );
+        }
         return (
             <div className="block-center">
-                <div className="d10">
-                    <h3>Добавить или удалить участника состава</h3>
-                </div>
-                <br/>
-                <div className="focus">
-                    <TextField name="user" color='secondary' id="outlined-basic" label='Имя' variant="filled" value={this.state.user} onChange={this.handleChange}/>
-                    <Button variant="contained" color="default" size="large" onClick={this.addItem}>
-                        Добавить
-                    </Button>
-                </div>
-                <br/>
-                <div className="d10">
-                    <h3>Наш состав</h3>
-                </div>
-                <br/>
-                <div>
-                    {this.outputItem()}
-                </div>
+                {this.outputItem()}
             </div>
-        )
+        );
     }
 }
 

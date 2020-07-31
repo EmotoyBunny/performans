@@ -5,6 +5,7 @@ import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
 import {makeStyles} from '@material-ui/core/styles';
 
+// Компонент jsx
 import "./CssComponents/Head.css"
 
 // Компоненты jsx
@@ -12,6 +13,8 @@ import Contacts from "./Contacts.jsx";
 import MainContent from "./MainContent.jsx";
 import Dance from "./Dance.jsx";
 import Collective from "./Collective.jsx";
+import Entry from "./ComponentForSomething/Entry.jsx";
+import HeadEntry from "./ComponentForSomething/HeadEntry";
 
 const useStyles = makeStyles({
     root: {
@@ -25,11 +28,17 @@ export default function Head() {
     const classes = useStyles();
     return (
         <div>
-            <header className="plate">
-                <p className="script"><span>Show</span></p>
-                <p className="shadow text1">PERFORMANCE</p>
-                <p className="script"><span>Ballet</span></p>
-            </header>
+            <Grid container>
+                <Grid item xs={3}/>
+                <Grid item xs={6}>
+                    <div className="three"><h1>Performance</h1></div>
+                </Grid>
+                <Grid item xs={3}>
+                <div className="container1">
+                    <HeadEntry/>
+                </div>
+                </Grid>
+            </Grid>
             <div className="container">
                 <Grid container>
                     <Grid item xs={3}>
@@ -56,6 +65,7 @@ export default function Head() {
                     <Route exact path="/сontacts" component={Contacts}/>
                     <Route exact path="/dance" component={Dance}/>
                     <Route exact path="/collective" component={Collective}/>
+                    <Route exact path="/entry" component={Entry}/>
                     <Route path="*" component={MainContent}/>
                 </Switch>
             </Router>

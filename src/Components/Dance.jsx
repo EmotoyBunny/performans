@@ -4,9 +4,10 @@ import Grid from '@material-ui/core/Grid';
 
 // Компоненты css
 import "./CssComponents/Dance.css";
-import ComponentForPhoto from "./ComponentForPhoto";
-import DanceArray from "./DanceArray";
 
+//Компоненты jsx
+import ComponentForPhoto from "./ComponentForSomething/ComponentForPhoto";
+import DanceArray from "./ComponentForSomething/DanceArray";
 
 class Dance extends Component {
     render() {
@@ -19,7 +20,6 @@ class Dance extends Component {
             <Grid container spacing={3}>
                 {Array}
             </Grid>
-
         );
     }
 }

@@ -2,36 +2,22 @@
     position: relative; /* Абсолютное позиционирование */
     width: 50%; /* Ширина блока */
     margin: auto; /* Отступ от блока */
-    top: 0; /* Положение блока от верхнего края */
-    bottom: 0; /* Положение блока от нижнего края */
-    left: 0; /* Положение блока от левого края */
-    right: 0; /* Положение блока от правого края */
     padding: 10px; /* Отступ внутри блока */
 }
 
 /*--------------------------------------*/
-
-
-.list {
-    font-family: "Times New Roman";
-    color: #1E2630;
-}
-
-
-/*--------------------------------------*/
 .focus {
+    margin: 4%;
     display: inline-block;
-
 }
+
 .focus input{
     background-color: #FBFAF1;
-
 }
 
 .focus button{
     margin-left: 10px;
-    margin-top:5px;
-
+    margin-top: 5px;
 }
 
 /*--------------------------------------*/

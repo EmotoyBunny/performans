@@ -4,7 +4,7 @@ import React, {Component} from "react";
 import logo from './Per1.jpg'
 
 // Компоненты jsx
-import ComponentForPhoto from "./ComponentForPhoto";
+import ComponentForPhoto from "./ComponentForSomething/ComponentForPhoto";
 
 // Компоненты css
 import "./CssComponents/Main.css"
@@ -12,7 +12,6 @@ import "./CssComponents/Main.css"
 class MainContent extends Component {
     render() {
         return (
-
             <ComponentForPhoto
                 item={{
                     width: 100,

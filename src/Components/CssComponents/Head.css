@@ -1,63 +1,72 @@
-/*Надпись*/
-@import url(http://fonts.googleapis.com/css?family=Arvo:700);
-@import url(http://fonts.googleapis.com/css?family=Seaweed+Script);
-
-
 .plate {
     max-width: 510px;
     margin: auto;
 }
 
-.shadow {
-    color: white;
-    font-family: Arvo;
-    font-weight: bold;
-    text-shadow:
-            -3px -3px 0 #222,
-            3px -3px 0 #222,
-            -3px 3px 0 #222,
-            3px 3px 0 #222,
-            4px 4px 0 #cccccc,
-            5px 5px 0 #cccccc,
-            6px 6px 0 #cccccc,
-            7px 7px 0 #cccccc;
-    line-height: 0.8em;
-    letter-spacing: 0.1em;
-    transform: scaleY(0.7);
-    -webkit-transform: scaleY(0.7);
-    -moz-transform: scaleY(0.7);
-    margin:0;
+.container1 {
+    margin: 10%;
+}
+
+/*-------------------------*/
+
+.three {
+    padding: 2%;
     text-align: center;
 }
-.script {
-    font-family: "Seaweed Script";
-    color:  white;
-    text-align: center;
-    font-size: 30px;
+
+.three h1 {
+    font-family: 'Merriweather', serif;
     position: relative;
+    color: white;
+    background: #5C5756;
+    font-size: 2.5em;
+    font-weight: normal;
+    padding: 10px 40px;
+    display: inline-block;
     margin: 0;
+    line-height: 1;
 }
-.script span {
-    background: #1E2630 url("fancy-pants.jpg");
-    padding: 0 0.3em;
-}
-.script:before {
-    content:"";
-    display: block;
+
+.three h1:before {
+    content: "";
     position: absolute;
-    z-index:-1;
-    top: 50%;
     width: 100%;
-    border-bottom: 3px solid #cccccc;
+    height: 4px;
+    left: 0;
+    bottom: -15px;
+    background: #6F6561;
 }
-.text1 {
-    font-size: 50px;
+
+.three h1:after {
+    content: "";
+    position: absolute;
+    height: 0;
+    width: 80%;
+    border-top: 10px solid #6F6561;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -25px;
+}
+
+@media (max-width: 500px) {
+    .three h1 {
+        font-size: 1.8em;
+    }
+}
+
+@media (max-width: 400px) {
+    .three h1 {
+        font-size: 1.5em;
+        padding: 10px 30px;
+    }
 }
 
 /*=========================================*/
 /*Кнопки*/
 .container {
-margin: 3%;
+    margin: 3%;
 }
 
 

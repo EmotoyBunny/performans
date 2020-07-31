@@ -1,12 +1,12 @@
 body {
-    background: #c7b39b url(./background/fancy-pants.jpg);
+    background: #c7b39b url(./background/blackTextures1.jpg);
     color: #fff;
     margin-left: 20%;
     margin-right: 20%;
 }
 
 a {
-    color: #FCF2E5; /* Цвет обычной ссылки */
+    color: #FCF2E5;
     text-decoration: none;
     text-transform: uppercase;
 }
