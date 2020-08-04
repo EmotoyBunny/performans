@@ -13,6 +13,7 @@ import InstagramIcon from '@material-ui/icons/Instagram';
 import PeopleIcon from '@material-ui/icons/People';
 
 
+
 // Компоненты css
 import "./CssComponents/Contact.css"
 
@@ -68,9 +69,8 @@ export default function Contacts() {
                 <ListItemAvatar>
                     <Avatar><PersonAddIcon/></Avatar>
                 </ListItemAvatar>
-                <ListItemText primary="Обращайтесь так же к"
-                              secondary={<p><a className="link" href="https://vk.com/tsenenkova">Галине</a> или <a
-                                  className="link" href="https://vk.com/id14216999">Виктории</a></p>}/>
+                <ListItemText primary="Обращайтесь так же к" secondary={<span><a className="link" href="https://vk.com/tsenenkova">Галине</a> или <a className="link" href="https://vk.com/id14216999">Виктории</a></span>}/>
+
             </ListItem>
         </List>
 

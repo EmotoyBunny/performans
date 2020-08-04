@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import {Nav} from "react-bootstrap"
+import {Link} from 'react-router-dom';
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
 
@@ -10,13 +10,14 @@ class HeadEntry extends Component {
     constructor() {
         super();
         this.state = {
-            role: 0,
+            role: 3,
         };
     };
 
     Exit = () => {
         localStorage.clear();
         this.update();
+        window.location.reload()
     };
 
     update = () => {
@@ -35,7 +36,7 @@ class HeadEntry extends Component {
                     this.setState({role: result.roleId});
                 });
         } else {
-            this.setState({role: 0})
+            this.setState({role: 3})
         }
     };
 
@@ -44,11 +45,11 @@ class HeadEntry extends Component {
     };
 
     render() {
-        if (localStorage.getItem('userId') === null || this.state.role === 0) {
+        if (localStorage.getItem('userId') === null || this.state.role === 3) {
             return (
                 <Grid item xs={3}>
-                    <Nav.Link href="/entry"> <Button variant="outlined"
-                                                     color="inherit" size="large">Вход</Button></Nav.Link>
+                    <Link to="/entry"> <Button variant="outlined"
+                                               color="inherit" size="large">Вход</Button></Link>
                 </Grid>
             );
         } else {

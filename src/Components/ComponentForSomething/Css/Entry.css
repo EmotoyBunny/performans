@@ -1,6 +1,9 @@
 .focus {
-    display: inline-block;
+    display: flex;
+    position: relative;
+    justify-content:center
 }
+
 
 .focus input {
     background-color: #FBFAF1;

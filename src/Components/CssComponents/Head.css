@@ -66,8 +66,12 @@
 /*=========================================*/
 /*Кнопки*/
 .container {
-    margin: 3%;
+    display: flex;
+    position: relative;
+    justify-content: center
 }
+
+
 
 
 

@@ -17,7 +17,7 @@ class Collective extends Component {
         this.state = {
             user: "",
             array: [],
-            role: 0,
+            role: 3,
         };
         this.url = 'http://localhost:7000/api/dancers';
     }
@@ -72,8 +72,7 @@ class Collective extends Component {
             })
             .then(dancer => {
                 this.setState({array: dancer.data})
-            })
-            .then(() => this.update());
+            });
     };
 
 
@@ -93,12 +92,13 @@ class Collective extends Component {
                     this.setState({role: result.roleId});
                 });
         } else {
-            this.setState({role: 0});
+            this.setState({role: 3});
         }
     };
 
     componentDidMount() {
         this.updateList();
+        this.update();
     }
 
 
@@ -108,7 +108,7 @@ class Collective extends Component {
      */
     outputItem = () => {
         const array = this.state.array;
-        if (this.state.role === 0) {
+        if (this.state.role === 0 || this.state.role === 3) {
             const listItems = array.map((items, index) =>
                 <ListItem key={index} button className="list">
                     <ListItemText id={index} primary={items.name}/>
