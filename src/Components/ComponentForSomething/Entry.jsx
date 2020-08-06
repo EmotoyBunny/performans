@@ -5,6 +5,8 @@ import TextField from '@material-ui/core/TextField';
 // Компоненты css
 import "./Css/Entry.css"
 
+import HeadEntry from "./HeadEntry";
+
 class Entry extends Component {
     constructor() {
         super();
@@ -42,13 +44,12 @@ class Entry extends Component {
                 return response.json();
             })
             .then(result => {
-                if (main === true) {
+                if (main) {
                     localStorage.setItem('userId', JSON.stringify(result.userId));
-                    window.location.assign('http://localhost:3000');
+                    this.props.history.push('/');
                 }
             });
     };
-
 
     render() {
         return (
@@ -62,7 +63,7 @@ class Entry extends Component {
                                value={this.state.password} onChange={this.handleChange}/>
                 </div>
                 <div className="focus">
-                    <Button variant="contained" color="default" size="large" onClick={this.entry}>
+                    <Button variant="contained" color="default" size="large" onClick={() => this.entry()}>
                         Войти
                     </Button>
                 </div>

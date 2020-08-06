@@ -3,6 +3,7 @@ import {BrowserRouter as Router, Route, Switch, Link} from 'react-router-dom';
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
 import {makeStyles} from '@material-ui/core/styles';
+import { createBrowserHistory } from "history";
 
 // Компонент jsx
 import "./CssComponents/Head.css"
@@ -26,8 +27,9 @@ const useStyles = makeStyles({
 
 export default function Head() {
     const classes = useStyles();
+    const customHistory = createBrowserHistory();
     return (
-        <Router>
+        <Router history={customHistory}>
             <Grid container>
                 <Grid item xs={3}/>
                 <Grid item xs={6}>

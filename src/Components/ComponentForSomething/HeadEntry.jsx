@@ -6,6 +6,10 @@ import Grid from '@material-ui/core/Grid';
 // Компоненты jsx
 import ComponentForEntry from "./ComponentForEntry";
 
+function updateState(text){
+    this.setState({text})
+}
+
 class HeadEntry extends Component {
     constructor() {
         super();
@@ -17,7 +21,6 @@ class HeadEntry extends Component {
     Exit = () => {
         localStorage.clear();
         this.update();
-        window.location.reload()
     };
 
     update = () => {
@@ -48,17 +51,17 @@ class HeadEntry extends Component {
         if (localStorage.getItem('userId') === null || this.state.role === 3) {
             return (
                 <Grid item xs={3}>
-                    <Link to="/entry"> <Button variant="outlined"
-                                               color="inherit" size="large">Вход</Button></Link>
+                    <Link to="/entry"><Button variant="outlined"
+                                              color="inherit" size="large">Вход</Button></Link>
                 </Grid>
             );
         } else {
             return (
                 <div>
                     <ComponentForEntry role={this.state.role}/>
-                    <Button variant="contained" color="default" size="large" onClick={this.Exit}>
+                    <Link to="/"><Button variant="contained" color="default" size="large" onClick={() => this.Exit()}>
                         Выйти
-                    </Button>
+                    </Button></Link>
                 </div>
             );
         }
