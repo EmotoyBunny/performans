@@ -6,49 +6,23 @@ import Grid from '@material-ui/core/Grid';
 // Компоненты jsx
 import ComponentForEntry from "./ComponentForEntry";
 
-function updateState(text){
-    this.setState({text})
-}
 
 class HeadEntry extends Component {
-    constructor() {
-        super();
-        this.state = {
-            role: 3,
-        };
+    constructor(props) {
+        super(props);
+        this.state = {};
     };
 
-    Exit = () => {
+    /**
+     * удаление userId и обновление roleId
+     */
+    exit = () => {
         localStorage.clear();
-        this.update();
-    };
-
-    update = () => {
-        if (localStorage.getItem("userId") !== null) {
-            let userId = Number(localStorage.getItem('userId'));
-            let login = {loginInfo: {userId: userId}};
-            fetch('http://127.0.0.1:7000/api/login', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json;charset=utf-8'
-                },
-                body: JSON.stringify(login)
-            })
-                .then(response => response.json())
-                .then(result => {
-                    this.setState({role: result.roleId});
-                });
-        } else {
-            this.setState({role: 3})
-        }
-    };
-
-    componentDidMount() {
-        this.update();
+        this.props.update();
     };
 
     render() {
-        if (localStorage.getItem('userId') === null || this.state.role === 3) {
+        if (localStorage.getItem('userId') === null || this.props.role === 3) {
             return (
                 <Grid item xs={3}>
                     <Link to="/entry"><Button variant="outlined"
@@ -58,8 +32,8 @@ class HeadEntry extends Component {
         } else {
             return (
                 <div>
-                    <ComponentForEntry role={this.state.role}/>
-                    <Link to="/"><Button variant="contained" color="default" size="large" onClick={() => this.Exit()}>
+                    <ComponentForEntry role={this.props.role}/>
+                    <Link to="/"><Button variant="contained" color="default" size="large" onClick={this.exit}>
                         Выйти
                     </Button></Link>
                 </div>

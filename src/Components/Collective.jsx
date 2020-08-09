@@ -17,7 +17,6 @@ class Collective extends Component {
         this.state = {
             user: "",
             array: [],
-            role: 3,
         };
         this.url = 'http://localhost:7000/api/dancers';
     }
@@ -76,29 +75,8 @@ class Collective extends Component {
     };
 
 
-    update = () => {
-        if (localStorage.getItem("userId") !== null) {
-            let userId = Number(localStorage.getItem('userId'));
-            let login = {loginInfo: {userId: userId}};
-            fetch('http://127.0.0.1:7000/api/login', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json;charset=utf-8'
-                },
-                body: JSON.stringify(login)
-            })
-                .then(response => response.json())
-                .then(result => {
-                    this.setState({role: result.roleId});
-                });
-        } else {
-            this.setState({role: 3});
-        }
-    };
-
     componentDidMount() {
         this.updateList();
-        this.update();
     }
 
 
@@ -108,14 +86,14 @@ class Collective extends Component {
      */
     outputItem = () => {
         const array = this.state.array;
-        if (this.state.role === 0 || this.state.role === 3) {
+        if (this.props.role === 0 || this.props.role === 3) {
             const listItems = array.map((items, index) =>
                 <ListItem key={index} button className="list">
                     <ListItemText id={index} primary={items.name}/>
                 </ListItem>
             );
             return (<List>{listItems}</List>);
-        } else if (this.state.role === 1 || this.state.role === 2) {
+        } else if (this.props.role === 1 || this.props.role === 2) {
             const listItems = array.map((items, index) =>
                 <ListItem key={index} button className="list">
                     <ListItemText id={index} primary={items.name}/>
@@ -129,7 +107,7 @@ class Collective extends Component {
     };
 
     render() {
-        if (this.state.role === 2) {
+        if (this.props.role === 2) {
             return (
                 <div className="block-center">
                     <div className="d10">

@@ -5,23 +5,28 @@ import TextField from '@material-ui/core/TextField';
 // Компоненты css
 import "./Css/Entry.css"
 
-import HeadEntry from "./HeadEntry";
 
 class Entry extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             login: "",
             password: "",
         };
     };
 
+    /**
+     * Запись введеных данных в state
+     * @param event
+     */
     handleChange = (event) => {
         const {name, value} = event.target;
         this.setState({[name]: value});
     };
 
-
+    /**
+     * Запись UserId по логину и паролю, а так же проверка на введенные данные
+     */
     entry = () => {
         if (this.state.login === "" || this.state.password === "") {
             return alert("Введите логин или пароль!")
@@ -46,6 +51,7 @@ class Entry extends Component {
             .then(result => {
                 if (main) {
                     localStorage.setItem('userId', JSON.stringify(result.userId));
+                    this.props.update();
                     this.props.history.push('/');
                 }
             });
@@ -63,7 +69,7 @@ class Entry extends Component {
                                value={this.state.password} onChange={this.handleChange}/>
                 </div>
                 <div className="focus">
-                    <Button variant="contained" color="default" size="large" onClick={() => this.entry()}>
+                    <Button variant="contained" color="default" size="large" onClick={this.entry}>
                         Войти
                     </Button>
                 </div>
